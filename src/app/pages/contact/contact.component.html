@@ -1,0 +1,111 @@
+<div class="contact-page" style="padding-top: var(--nav-h)">
+  <section class="section-wrap">
+    <div class="contact-grid">
+
+      <!-- LEFT -->
+      <div class="contact-left">
+        <p class="section-eyebrow reveal">Get in Touch</p>
+        <h1 class="section-heading reveal reveal-d1">
+          Let's build<br><em>something great.</em>
+        </h1>
+        <p class="contact-intro reveal reveal-d2">
+          Whether it's a product idea, a technical challenge, or a collaboration —
+          I'd love to hear from you. I typically respond within 24 hours.
+        </p>
+
+        <div class="contact-info reveal reveal-d3">
+          <div class="ci-item">
+            <span class="ci-label font-mono">Email</span>
+            <a href="mailto:you@example.com" class="ci-value">youexample.com</a>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label font-mono">Location</span>
+            <span class="ci-value">India — Working globally</span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label font-mono">Availability</span>
+            <span class="ci-value">
+              <span class="dot-green"></span> Open to opportunities
+            </span>
+          </div>
+        </div>
+
+        <div class="socials reveal reveal-d4">
+          @for (s of socials; track s.label) {
+            <a [href]="s.url" class="social-card" target="_blank" rel="noopener">
+              <span class="social-icon font-mono">{{ s.icon }}</span>
+              <div>
+                <div class="social-label">{{ s.label }}</div>
+                <div class="social-handle font-mono">{{ s.handle }}</div>
+              </div>
+            </a>
+          }
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="contact-right reveal reveal-d2">
+        @if (!sent()) {
+          <form class="contact-form" (ngSubmit)="submit()" #f="ngForm">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="field-label font-mono">Name</label>
+                <input
+                  type="text" name="name"
+                  [(ngModel)]="form.name"
+                  required placeholder="Your name"
+                  class="field-input"
+                />
+              </div>
+              <div class="form-field">
+                <label class="field-label font-mono">Email</label>
+                <input
+                  type="email" name="email"
+                  [(ngModel)]="form.email"
+                  required placeholder="your@email.com"
+                  class="field-input"
+                />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="field-label font-mono">Subject</label>
+              <input
+                type="text" name="subject"
+                [(ngModel)]="form.subject"
+                required placeholder="What's this about?"
+                class="field-input"
+              />
+            </div>
+            <div class="form-field">
+              <label class="field-label font-mono">Message</label>
+              <textarea
+                name="message"
+                [(ngModel)]="form.message"
+                required placeholder="Tell me about your project..."
+                class="field-input"
+                rows="6"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold submit-btn" [disabled]="sending() || f.invalid">
+              @if (sending()) {
+                <span class="spinner"></span> Sending...
+              } @else {
+                Send Message
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              }
+            </button>
+          </form>
+        } @else {
+          <div class="sent-state">
+            <div class="sent-icon">✓</div>
+            <h3>Message sent!</h3>
+            <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
+            <button class="btn btn-outline" (click)="sent.set(false)">Send another</button>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

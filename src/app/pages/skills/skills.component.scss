@@ -1,0 +1,115 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.skill-group {
+  padding: 2rem;
+  border-radius: 0;
+}
+
+.sg-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.sg-icon { font-size: 1.4rem; }
+
+.sg-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.sg-skills { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.skill-row { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.skill-name { font-size: 0.875rem; color: var(--text-secondary); }
+
+.skill-pct {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.bar-track {
+  height: 2px;
+  background: var(--border-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+.bar-fill {
+  position: absolute;
+  left: 0; top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), rgba(var(--accent-rgb), 0.5));
+  width: 0;
+  transition: width 1.4s cubic-bezier(0.23,1,0.32,1);
+}
+
+// Tools
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.tool-pill {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  transition: all 0.25s;
+  cursor: default;
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(var(--accent-rgb), 0.05);
+  }
+}
+
+// Learning strip
+.learning-strip {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  flex-wrap: wrap;
+}
+
+.learning-items {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  span {
+    font-size: 0.875rem;
+    color: var(--text);
+    padding: 0.3rem 0.8rem;
+    background: rgba(var(--accent-rgb), 0.1);
+    border: 1px solid rgba(var(--accent-rgb), 0.25);
+    color: var(--accent);
+  }
+}
