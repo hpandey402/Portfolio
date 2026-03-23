@@ -1,0 +1,58 @@
+<div class="skills-page" style="padding-top: var(--nav-h)">
+  <section class="section-wrap">
+    <p class="section-eyebrow reveal">Technical Skills</p>
+    <h1 class="section-heading reveal reveal-d1">
+      The tools I use to<br><em>build great things.</em>
+    </h1>
+
+    <div class="skills-grid">
+      @for (group of groups; track group.label; let gi = $index) {
+        <div class="skill-group card reveal" [class]="'reveal-d' + gi">
+          <div class="sg-header">
+            <span class="sg-icon">{{ group.icon }}</span>
+            <h2 class="sg-label">{{ group.label }}</h2>
+          </div>
+
+          <div class="sg-skills">
+            @for (skill of group.skills; track skill.name) {
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-pct font-mono">{{ skill.level }}%</span>
+                </div>
+                <div class="bar-track">
+                  <div
+                    class="bar-fill"
+                    [attr.data-level]="skill.level"
+                    style="width: 0"
+                  ></div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- TOOLS -->
+    <div class="tools-section reveal">
+      <p class="section-eyebrow" style="margin-top: 5rem;">Tools & Workflow</p>
+      <div class="tools-grid">
+        @for (tool of tools; track tool) {
+          <div class="tool-pill">{{ tool }}</div>
+        }
+      </div>
+    </div>
+
+    <!-- LEARNING NOW -->
+    <div class="learning-strip reveal">
+      <span class="font-mono" style="font-size:0.7rem;letter-spacing:0.15em;color:var(--accent);">Currently learning</span>
+      <div class="learning-items">
+        <span>Rust</span>
+        <span>Svelte 5</span>
+        <span>WebGPU</span>
+        <span>Zig</span>
+      </div>
+    </div>
+  </section>
+</div>

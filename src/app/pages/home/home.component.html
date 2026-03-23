@@ -1,0 +1,85 @@
+<section class="hero">
+  <canvas #canvas class="hero-canvas"></canvas>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal font-mono">Full-Stack Developer &amp; UI Engineer</p>
+
+    <h1 class="hero-title reveal reveal-d1">
+      <span class="line">Crafting</span>
+      <span class="line accent font-display">Digital</span>
+      <span class="line">Experiences.</span>
+    </h1>
+
+    <p class="hero-sub reveal reveal-d2">
+      I build products that live at the intersection of<br>
+      <em>elegant engineering</em> and <em>intentional design</em>.
+    </p>
+
+    <div class="hero-cta reveal reveal-d3">
+      <a routerLink="/projects" class="btn btn-gold" data-magnetic>
+        View Projects
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+      <a routerLink="/contact" class="btn btn-outline" data-magnetic>
+        Let's Talk
+      </a>
+    </div>
+
+    <div class="hero-scroll reveal reveal-d4">
+      <div class="scroll-track">
+        <div class="scroll-thumb"></div>
+      </div>
+      <span class="font-mono">Scroll</span>
+    </div>
+  </div>
+
+  <!-- Floating label -->
+  <div class="hero-availability reveal">
+    <span class="dot"></span>
+    Available for work
+  </div>
+
+  <!-- Big watermark -->
+  <div class="watermark font-display" aria-hidden="true">DEV</div>
+</section>
+
+<!-- Mini intro strip -->
+<section class="intro-strip">
+  <div class="strip-inner">
+    @for (item of ['Angular', 'React', 'Node.js', 'TypeScript', 'AWS', 'WebGL', 'Postgres', 'Kubernetes']; track item) {
+      <span class="strip-item">
+        <span class="strip-dot">◆</span> {{ item }}
+      </span>
+    }
+    <!-- repeat for marquee -->
+    @for (item of ['Angular', 'React', 'Node.js', 'TypeScript', 'AWS', 'WebGL', 'Postgres', 'Kubernetes']; track item) {
+      <span class="strip-item">
+        <span class="strip-dot">◆</span> {{ item }}
+      </span>
+    }
+  </div>
+</section>
+
+<!-- Featured stats -->
+<section class="stats-section section-wrap">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <span class="stat-num font-display">5+</span>
+      <span class="stat-label">Years of experience</span>
+    </div>
+    <div class="stat-item reveal reveal-d1">
+      <span class="stat-num font-display">42+</span>
+      <span class="stat-label">Projects shipped</span>
+    </div>
+    <div class="stat-item reveal reveal-d2">
+      <span class="stat-num font-display">18</span>
+      <span class="stat-label">Happy clients</span>
+    </div>
+    <div class="stat-item reveal reveal-d3">
+      <span class="stat-num font-display">99</span>
+      <span class="stat-label">Lighthouse score</span>
+    </div>
+  </div>
+</section>

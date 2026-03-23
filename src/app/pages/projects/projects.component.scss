@@ -1,0 +1,159 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.4rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s;
+
+  &:hover { border-color: var(--accent); color: var(--accent); }
+  &.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0a0908;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 1100px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 640px)  { grid-template-columns: 1fr; }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0;
+  transition: transform 0.4s cubic-bezier(0.23,1,0.32,1), box-shadow 0.4s, border-color 0.3s;
+
+  &.featured {
+    grid-column: span 1;
+    border-color: rgba(var(--accent-rgb), 0.3);
+  }
+}
+
+.pc-thumb {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.4s cubic-bezier(0.23,1,0.32,1);
+
+  .project-card:hover & { height: 210px; }
+}
+
+.pc-emoji {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
+  transition: transform 0.5s cubic-bezier(0.23,1,0.32,1);
+
+  .project-card:hover & { transform: scale(1.12) translateY(-4px); }
+}
+
+.pc-featured {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  background: rgba(var(--accent-rgb), 0.9);
+  color: #0a0908;
+}
+
+.pc-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: var(--bg-surface);
+}
+
+.pc-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.pc-cat, .pc-year {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.pc-year { color: var(--text-muted); }
+
+.pc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.pc-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.pc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.pc-tag {
+  font-size: 0.65rem;
+  font-family: 'Space Mono', monospace;
+  padding: 0.2rem 0.55rem;
+  background: var(--bg-surface2);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.pc-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.pc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: gap 0.2s;
+  cursor: pointer;
+
+  &:hover { gap: 0.65rem; }
+  &.pc-github { color: var(--text-secondary); margin-left: auto; }
+  &.pc-github:hover { color: var(--text); }
+}

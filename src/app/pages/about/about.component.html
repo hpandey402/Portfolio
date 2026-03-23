@@ -1,0 +1,96 @@
+<div class="about-page" style="padding-top: var(--nav-h)">
+
+  <!-- INTRO -->
+  <section class="section-wrap about-intro">
+    <div class="about-grid">
+      <div class="about-left">
+        <p class="section-eyebrow reveal">About Me</p>
+        <h1 class="section-heading reveal reveal-d1">
+          Engineer by craft,<br><em>designer</em> at heart.
+        </h1>
+        <div class="about-text reveal reveal-d2">
+          <p>
+            I'm a full-stack developer with 5+ years building products that scale.
+            My work spans from distributed backend systems to pixel-perfect interfaces —
+            I care deeply about both the <strong>architecture</strong> and the <strong>experience</strong>.
+          </p>
+          <p>
+            Based in India, working with clients globally. I thrive where engineering
+            rigour meets creative vision — where a well-chosen data structure and a
+            perfectly timed animation share the same whiteboard.
+          </p>
+          <p>
+            When I'm not pushing commits, you'll find me dissecting design systems,
+            contributing to open source, or over-engineering my coffee setup.
+          </p>
+        </div>
+        <div class="about-actions reveal reveal-d3">
+          <a routerLink="/contact" class="btn btn-gold">Get in Touch</a>
+          <a href="#" class="btn btn-outline" download>Download CV</a>
+        </div>
+      </div>
+
+      <div class="about-right reveal reveal-d2">
+        <div class="portrait-wrap">
+          <div class="portrait-inner">
+            <div class="portrait-placeholder font-display">YN</div>
+          </div>
+          <div class="portrait-border"></div>
+          <div class="portrait-tag font-mono">
+            <span class="dot-green"></span> Open to work
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section-wrap timeline-section">
+    <p class="section-eyebrow reveal">Experience</p>
+    <h2 class="section-heading reveal reveal-d1">The journey so far.</h2>
+
+    <div class="timeline">
+      @for (item of timeline; track item.year; let i = $index) {
+        <div class="timeline-item reveal" [class]="'reveal-d' + (i + 1)">
+          <div class="tl-year font-mono">{{ item.year }}</div>
+          <div class="tl-line">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-body">
+            <h3 class="tl-role">{{ item.role }}</h3>
+            <p class="tl-company">{{ item.company }}</p>
+            <p class="tl-desc">{{ item.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section-wrap values-section">
+    <p class="section-eyebrow reveal">What I believe in</p>
+    <h2 class="section-heading reveal reveal-d1">Principles that<br>guide my work.</h2>
+    <div class="values-grid">
+      <div class="value-card card reveal">
+        <div class="value-icon">⚡</div>
+        <h3>Performance first</h3>
+        <p>Every millisecond matters. I optimise for real-world speed, not just benchmarks.</p>
+      </div>
+      <div class="value-card card reveal reveal-d1">
+        <div class="value-icon">🎯</div>
+        <h3>Intentional design</h3>
+        <p>Nothing is added without purpose. Simplicity is the hardest discipline.</p>
+      </div>
+      <div class="value-card card reveal reveal-d2">
+        <div class="value-icon">🔒</div>
+        <h3>Reliability</h3>
+        <p>Code that works at 3am without anyone watching is the real measure of quality.</p>
+      </div>
+      <div class="value-card card reveal reveal-d3">
+        <div class="value-icon">🌱</div>
+        <h3>Continuous growth</h3>
+        <p>The best engineers are always beginners in something. Curiosity is the engine.</p>
+      </div>
+    </div>
+  </section>
+</div>
